@@ -26,12 +26,13 @@ using System.Text;
 
 namespace EmployeeWageCompute058
 {
-    class UC4_EmpWageUsingSwitch
+    public class UC5_WageForMonth
     {
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
         public const int EMP_RATE_PER_HOUR = 20;
-        static void Main(String[] args)
+        public const int NUM_OF_WORKING_DAYS = 20;
+        public static void Main(String[] args)
         {
 <<<<<<< HEAD
             //UC3 wage
@@ -43,10 +44,12 @@ namespace EmployeeWageCompute058
 =======
 >>>>>>> UC-4Switchcasestatement
             //Variables
-            int empHrs = 0;
+            int empHrs = 0; 
             int empWage = 0;
+            int totalEmpWage = 0;
             Random random = new Random();
             //Computation
+<<<<<<< HEAD
 <<<<<<< HEAD
             int empCheck = random.Next(0, 2);
             if (empCheck == IS_FULL_TIME)
@@ -88,10 +91,31 @@ namespace EmployeeWageCompute058
                     empHrs = 0;
                     break;
 >>>>>>> UC-4Switchcasestatement
+=======
+            for (int day =0; day < NUM_OF_WORKING_DAYS; day++)
+            {
+                
+                int empCheck = random.Next(0, 3);
+                switch (empCheck)
+                {
+                    case IS_PART_TIME:
+                        empHrs = 4;
+                        break;
+                    case IS_FULL_TIME:
+                        empHrs = 8;
+                        break;
+                    default:
+                        empHrs = 0;
+                        break;
+                }
+                empWage = empHrs * EMP_RATE_PER_HOUR;
+                totalEmpWage += empWage;
+                Console.WriteLine("Emp Wage of day : " + (day+1) + " is : " + empWage);
+>>>>>>> UC-5Wagesformonth
             }
-            empWage = empHrs * EMP_RATE_PER_HOUR;
-            Console.WriteLine("Employee Wage : " + empWage);
-        }
+            Console.WriteLine("Total Emp Wage : " + totalEmpWage);
+            Console.Read();
+        }  
     }
 }
 >>>>>>> UC-3AddParttimeempwage
