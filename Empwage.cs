@@ -1,6 +1,7 @@
 ﻿using System;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e269f828627cecf9b9cdf2ea58e6066b8ed5baac
 using System.Collections.Generic;
@@ -18,19 +19,29 @@ namespace EmployeeWageCompute058
             //Constants
             int IS_FULL_TIME = 1;
 =======
+=======
+using System.Collections.Generic;
+using System.Text;
+>>>>>>> UC-4Switchcasestatement
 
-namespace EmployeeCompute058
+namespace EmployeeWageCompute058
 {
-    public class UC3_PartTimeEmp
+    class UC4_EmpWageUsingSwitch
     {
+        public const int IS_PART_TIME = 1;
+        public const int IS_FULL_TIME = 2;
+        public const int EMP_RATE_PER_HOUR = 20;
         static void Main(String[] args)
         {
+<<<<<<< HEAD
             //UC3 wage
             //Constants
             int IS_PART_TIME = 1;
             int IS_FULL_TIME = 2;
 >>>>>>> UC-3AddParttimeempwage
             int EMP_RATE_PER_HOUR = 20;
+=======
+>>>>>>> UC-4Switchcasestatement
             //Variables
             int empHrs = 0;
             int empWage = 0;
@@ -41,8 +52,9 @@ namespace EmployeeCompute058
             if (empCheck == IS_FULL_TIME)
 =======
             int empCheck = random.Next(0, 3);
-            if (empCheck == IS_PART_TIME)
+            switch (empCheck)
             {
+<<<<<<< HEAD
                 empHrs = 4;
             }
             else if (empCheck == IS_FULL_TIME)
@@ -65,10 +77,20 @@ namespace EmployeeCompute058
 
 =======
 
+=======
+                case IS_PART_TIME:
+                    empHrs = 4;
+                    break;
+                case IS_FULL_TIME:
+                    empHrs = 8;
+                    break;
+                default:
+                    empHrs = 0;
+                    break;
+>>>>>>> UC-4Switchcasestatement
             }
             empWage = empHrs * EMP_RATE_PER_HOUR;
             Console.WriteLine("Employee Wage : " + empWage);
-            Console.Read();
         }
     }
 }
